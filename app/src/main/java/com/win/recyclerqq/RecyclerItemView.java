@@ -24,7 +24,6 @@ public class RecyclerItemView extends HorizontalScrollView{
     private onSlidingButtonListener onSbl;//滑动按钮侦听器
 
     private Boolean isOpen = false;//判断是否有删除按钮被打开
-    private Boolean once = false;//判断是否有删除按钮被打开
 
     public RecyclerItemView(Context context) {
         this(context, null);
@@ -43,12 +42,7 @@ public class RecyclerItemView extends HorizontalScrollView{
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        if(!once){
             slide = (LinearLayout) findViewById(R.id.slide);
-//            delete = (TextView) findViewById(R.id.delete);
-            once = true;
-        }
-
     }
 
     //通过布局获取按钮宽度
