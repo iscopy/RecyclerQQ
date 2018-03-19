@@ -85,7 +85,7 @@ public class RecyclerUtils {
         return output;
     }
 
-    //将res里的图片转换成位图
+    //将res里的图片转换成位图 (裁剪需要)
     public static Bitmap bitmaps(int image,Context context){
         Resources res = context.getResources();
         Bitmap bitmap = BitmapFactory.decodeResource(res, image);
