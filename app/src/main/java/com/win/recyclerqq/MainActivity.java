@@ -12,7 +12,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements RecyclerViewAdapter.onSlidingViewClickListener{
+public class MainActivity
+        extends AppCompatActivity
+        implements RecyclerViewAdapter.onSlidingViewClickListener{
 
     private RecyclerView recycler;              //在xml 中 RecyclerView 布局
     private RecyclerViewAdapter rvAdapter;      //item_recycler 布局的 适配器
@@ -43,10 +45,11 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
     public void updateInterface(){
         if (rvAdapter == null) {
             //实例化 RecyclerViewAdapter 并设置数据
-            rvAdapter = new RecyclerViewAdapter(this, dataImage, dataTitle, datasContent, datasTime);
+            rvAdapter = new RecyclerViewAdapter(this,
+                    dataImage, dataTitle, datasContent, datasTime);
             //将适配的内容放入 mRecyclerView
             recycler.setAdapter(rvAdapter);
-            //控制Item增删的动画，需要通过ItemAnimator     DefaultItemAnimator -- 实现自定义动画
+            //控制Item增删的动画，需要通过ItemAnimator  DefaultItemAnimator -- 实现自定义动画
             recycler.setItemAnimator(new DefaultItemAnimator());
         }else {
             //强调通过 getView() 刷新每个Item的内容

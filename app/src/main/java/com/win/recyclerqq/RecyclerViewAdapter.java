@@ -3,25 +3,23 @@ package com.win.recyclerqq;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Administrator on 2018/3/16 0016.
+ * item_recycler.xml 的适配器
  */
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.SimpleHolder> implements RecyclerItemView.onSlidingButtonListener{
+public class RecyclerViewAdapter
+        extends RecyclerView.Adapter<RecyclerViewAdapter.SimpleHolder>
+        implements RecyclerItemView.onSlidingButtonListener{
 
     private Context context;
 
