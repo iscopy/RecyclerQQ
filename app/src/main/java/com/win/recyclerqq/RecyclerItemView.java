@@ -15,8 +15,6 @@ import android.widget.TextView;
 
 public class RecyclerItemView extends HorizontalScrollView{
 
-//    private TextView delete;//删除按钮
-
     private LinearLayout slide;//滑动弹出的按钮容器
 
     private int slideWidth; // 滑动弹出这个控件的宽度
