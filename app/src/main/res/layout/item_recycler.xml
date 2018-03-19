@@ -22,7 +22,7 @@
                 android:layout_height="match_parent"
                 android:layout_width="80dp"
                 android:gravity="center"
-                android:background="@drawable/btn_click_yellow_havebackground"
+                android:background="@drawable/button_yellow"
                 android:text="其 他" />
 
             <TextView
@@ -30,7 +30,7 @@
                 android:layout_height="match_parent"
                 android:layout_width="80dp"
                 android:gravity="center"
-                android:background="@drawable/btn_click_red_havebackground"
+                android:background="@drawable/button_red"
                 android:text="删 除"/>
 
         </LinearLayout>
@@ -39,7 +39,7 @@
             android:id="@+id/layout_left"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/btn_click_black_havebackground"
+            android:background="@drawable/content_white"
             android:orientation="horizontal">
 
             <ImageView
