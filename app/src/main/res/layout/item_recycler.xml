@@ -10,14 +10,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/delete"
-            android:layout_height="match_parent"
-            android:layout_width="80dp"
-            android:gravity="center"
-            android:background="@drawable/btn_click_red_havebackground"
+        <LinearLayout
+            android:id="@+id/slide"
             android:layout_toRightOf="@+id/layout_left"
-            android:text="删 除"/>
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/other"
+                android:layout_height="match_parent"
+                android:layout_width="80dp"
+                android:gravity="center"
+                android:background="@drawable/btn_click_yellow_havebackground"
+                android:text="其 他" />
+
+            <TextView
+                android:id="@+id/delete"
+                android:layout_height="match_parent"
+                android:layout_width="80dp"
+                android:gravity="center"
+                android:background="@drawable/btn_click_red_havebackground"
+                android:text="删 除"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/layout_left"

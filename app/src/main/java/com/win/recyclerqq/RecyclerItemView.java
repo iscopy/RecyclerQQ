@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
@@ -14,9 +15,11 @@ import android.widget.TextView;
 
 public class RecyclerItemView extends HorizontalScrollView{
 
-    private TextView delete;//删除按钮
+//    private TextView delete;//删除按钮
 
-    private int deteleWidth; // 删除按钮这个控件的宽度
+    private LinearLayout slide;//滑动弹出的按钮容器
+
+    private int slideWidth; // 滑动弹出这个控件的宽度
 
     private onSlidingButtonListener onSbl;//滑动按钮侦听器
 
@@ -41,7 +44,8 @@ public class RecyclerItemView extends HorizontalScrollView{
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         if(!once){
-            delete = (TextView) findViewById(R.id.delete);
+            slide = (LinearLayout) findViewById(R.id.slide);
+//            delete = (TextView) findViewById(R.id.delete);
             once = true;
         }
 
@@ -54,7 +58,7 @@ public class RecyclerItemView extends HorizontalScrollView{
         if(changed){
             this.scrollTo(0,0);
             //获取水平滚动条可以滑动的范围，即右侧按钮的宽度
-            deteleWidth = delete.getWidth();
+            slideWidth = slide.getWidth();
         }
     }
 
@@ -81,15 +85,15 @@ public class RecyclerItemView extends HorizontalScrollView{
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
-        delete.setTranslationX(l - deteleWidth);
+        slide.setTranslationX(l - slideWidth);
     }
 
     // 按滚动条被拖动距离判断关闭或打开菜单 (被拖动的距离有没有隐藏或显示控件的一半以上？)
     public void changeScrollx(){
         //判断拖动的距离有没有超过删除按钮的一半
-        if(getScrollX() >= (deteleWidth/2)){
+        if(getScrollX() >= (slideWidth/2)){
             //推动了一半以上就打开
-            this.smoothScrollTo(deteleWidth, 0);
+            this.smoothScrollTo(slideWidth, 0);
             isOpen = true;
             onSbl.onMenuIsOpen(this);
         }else{

@@ -78,6 +78,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 }
             }
         });
+        holder.other.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,"其他："+position,Toast.LENGTH_SHORT).show();
+            }
+        });
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -113,6 +119,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public TextView title;
         public TextView content;
         public TextView time;
+        public TextView other;
         public TextView delete;
         public LinearLayout layout_left;
         public SimpleHolder(View view) {
@@ -122,6 +129,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             title = (TextView) view.findViewById(R.id.title);
             content = (TextView) view.findViewById(R.id.content);
             time = (TextView) view.findViewById(R.id.time);
+            other = (TextView) view.findViewById(R.id.other);
             delete = (TextView) view.findViewById(R.id.delete);
             layout_left = (LinearLayout) view.findViewById(R.id.layout_left);
 
